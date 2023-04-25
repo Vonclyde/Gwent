@@ -15,6 +15,11 @@ class SiegeTest extends FunSuite {
     assertEquals(new Siege(name), siege)
   }
 
+  test("Siege unit card can't be an instance of another class") {
+    assert(!siege.equals(new Ranged(name)))
+    assert(!siege.equals(new Melee(name)))
+  }
+
   test("The hash code of a siege card is consistent with equals") {
     assertEquals(new Siege(name).##, siege.##)
   }

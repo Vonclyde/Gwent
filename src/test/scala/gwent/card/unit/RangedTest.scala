@@ -15,6 +15,11 @@ class RangedTest extends FunSuite {
     assertEquals(new Ranged(name), ranged)
   }
 
+  test("Ranged unit card can't be an instance of another class") {
+    assert(!ranged.equals(new Melee(name)))
+    assert(!ranged.equals(new Siege(name)))
+  }
+
   test("The hash code of a ranged card is consistent with equals") {
     assertEquals(new Ranged(name).##, ranged.##)
   }

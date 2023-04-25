@@ -31,10 +31,13 @@ class PlayerTest extends FunSuite {
 
   }
 
-  test("Dos jugadores con el mismo nombre debiesen ser el mismo") {
+  test("Two players with the same name means that they are the same") {
     assertEquals(new Player(name, "Right", 2, deck, hand), player)
   }
 
+  test("Player can't be a instance of another class") {
+    assert(!player.equals(new Card(name)))
+  }
   /** The next tests are for methods */
   test("Jugador tiene un mazo y una mano") {
     assertEquals(player.deck.size, 2)
