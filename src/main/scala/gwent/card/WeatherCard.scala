@@ -3,6 +3,9 @@ package gwent.card
 
 import gwent.card.Card
 
+import cl.uchile.dcc.gwent.board.Board
+import cl.uchile.dcc.gwent.player.Player
+
 /** A weather card, it extends Card.
  *
  * @constructor Create a weather card with a given name.
@@ -13,4 +16,7 @@ import gwent.card.Card
  */
 class WeatherCard(override val name: String) extends Card(name) with Equals {
   /** Same methods of Card */
+  override def play(player: Player): Unit = {
+    printf("Not implemented yet")
+  }
 }

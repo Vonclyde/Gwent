@@ -1,16 +1,20 @@
 package cl.uchile.dcc
 package gwent.player
+package gwent.card
 
 import cl.uchile.dcc.gwent.card.Card
+import cl.uchile.dcc.gwent.card.unit.{Melee, Ranged}
 import munit.FunSuite
+
 class PlayerTest extends FunSuite {
   val name = "Ramirez"
-  val side = "Left"
 
   var card1: Card = _
   var card2: Card = _
   var card3: Card = _
   var card4: Card = _
+
+  var side: Battleground = _
 
   var deck: Deck = _
   var hand: Hand = _
@@ -19,24 +23,26 @@ class PlayerTest extends FunSuite {
 
   override def beforeEach(context: BeforeEach): Unit = {
 
-    card1 = new Card("Varian Wrynn")
-    card2 = new Card("Medivh")
-    card3 = new Card("Arthas Menethil")
-    card4 = new Card("Gromash Hellscream")
+    card1 = new Melee("Varian Wrynn")
+    card2 = new Ranged("Medivh")
+    card3 = new Melee("Arthas Menethil")
+    card4 = new Melee("Gromash Hellscream")
+
+    side = new Battleground()
 
     deck = new Deck(List(card1, card2))
     hand = new Hand(List(card3, card4))
 
-    player = new Player(name, side, 2, deck, hand)
+    player = new Player(name, side,2, deck, hand)
 
   }
 
   test("Two players with the same name means that they are the same") {
-    assertEquals(new Player(name, "Right", 2, deck, hand), player)
+    assertEquals(new Player(name, side, 2, deck, hand), player)
   }
 
   test("Player can't be a instance of another class") {
-    assert(!player.equals(new Card(name)))
+    assert(!player.equals(new Melee(name)))
   }
   /** The next tests are for methods */
   test("Jugador tiene un mazo y una mano") {

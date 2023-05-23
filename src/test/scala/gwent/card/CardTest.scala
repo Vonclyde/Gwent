@@ -1,7 +1,6 @@
 package cl.uchile.dcc
 package gwent.card
-
-import cl.uchile.dcc.gwent.card.unit.Melee
+import cl.uchile.dcc.gwent.player.Deck
 import munit.FunSuite
 class CardTest extends FunSuite {
   val name = "Thrall"
@@ -16,7 +15,7 @@ class CardTest extends FunSuite {
   }
 
   test("Card can't be an instance of another class") {
-    assert(!card.equals(new Melee(name)))
+    assert(!card.equals(new Deck(List())))
   }
 
   test("The hash code of a ranged card is consistent with equals") {

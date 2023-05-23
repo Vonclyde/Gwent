@@ -1,6 +1,8 @@
 package cl.uchile.dcc
 package gwent.card
 
+import cl.uchile.dcc.gwent.player.Player
+
 import java.util.Objects
 
 /** A generic card.
@@ -13,6 +15,11 @@ import java.util.Objects
  * @version 1.0.0
  */
 class Card(val name: String) extends Equals {
+  
+  def play(player: Player): Unit = {
+    println("Nothing yet")
+  }
+  
   override def canEqual(that: Any): Boolean = that.isInstanceOf[Card]
   
   override def equals(that: Any): Boolean = {
