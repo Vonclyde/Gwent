@@ -1,18 +1,18 @@
 package cl.uchile.dcc
 package gwent.player
-package gwent.card
 
-import cl.uchile.dcc.gwent.card.Card
-import cl.uchile.dcc.gwent.card.unit.{Melee, Ranged}
+import gwent.board.Battleground
+import gwent.card.{Melee, Ranged}
+
 import munit.FunSuite
 
 class PlayerTest extends FunSuite {
   val name = "Ramirez"
 
-  var card1: Card = _
-  var card2: Card = _
-  var card3: Card = _
-  var card4: Card = _
+  var card1: Melee = _
+  var card2: Ranged = _
+  var card3: Melee = _
+  var card4: Melee = _
 
   var side: Battleground = _
 
@@ -28,16 +28,18 @@ class PlayerTest extends FunSuite {
     card3 = new Melee("Arthas Menethil")
     card4 = new Melee("Gromash Hellscream")
 
-    side = new Battleground()
+    side = new Battleground
 
     deck = new Deck(List(card1, card2))
     hand = new Hand(List(card3, card4))
 
-    player = new Player(name, side,2, deck, hand)
-
+    player = new Player(name, side, 2, deck, hand)
   }
 
-  test("Two players with the same name means that they are the same") {
+  test("A player needs to be initialized with a name, a battleground," +
+    "his gems, his deck and hand") {
+    assertEquals(player.name, name)
+    assertEquals(player.gems, 2)
     assertEquals(new Player(name, side, 2, deck, hand), player)
   }
 
@@ -45,14 +47,14 @@ class PlayerTest extends FunSuite {
     assert(!player.equals(new Melee(name)))
   }
   /** The next tests are for methods */
-  test("Jugador tiene un mazo y una mano") {
+  test("Player has a deck and a hand of cards") {
     assertEquals(player.deck.size, 2)
     assertEquals(player.deck.cards, List(card1, card2))
     assertEquals(player.hand.size, 2)
     assertEquals(player.hand.cards, List(card3, card4))
   }
 
-  test("Jugador roba una carta del mazo") {
+  test("Player draws a card from his deck") {
     assertEquals(player.deck, deck)
     assertEquals(player.hand, hand)
     player.draw()
@@ -76,26 +78,5 @@ class PlayerTest extends FunSuite {
     assertEquals(player.deck.cards, List())
     assertEquals(player.hand.size, 4)
     assertEquals(player.hand.cards, List(card3, card4, card1, card2))
-  }
-
-  test("Jugador juega una carta de su mano") {
-    // Playing the card at index 1.
-    assertEquals(player.hand.size, 2)
-    assertEquals(player.hand.cards, List(card3, card4))
-    player.play(1)
-
-    // Verifying the hand.
-    assertEquals(player.hand.size, 1)
-    assertEquals(player.hand.cards, List(card3))
-
-    // Playing the last card at index 0.
-    player.play(0)
-    assertEquals(player.hand.size, 0)
-    assertEquals(player.hand.cards, List())
-
-    // Now Hand is empty, it prints: Your hand is empty!
-    player.play(67) // Doesn't matter
-    assertEquals(player.hand.size, 0)
-    assertEquals(player.hand.cards, List())
   }
 }

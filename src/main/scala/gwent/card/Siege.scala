@@ -1,9 +1,10 @@
 package cl.uchile.dcc
-package gwent.card.unit
+package gwent.card
 
-import gwent.card.unit.AbstractUnitCard
+import gwent.card.AbstractUnitCard
+import gwent.player.Player
 
-import cl.uchile.dcc.gwent.player.Player
+import cl.uchile.dcc.gwent.board.Board
 
 import java.util.Objects
 
@@ -15,17 +16,18 @@ import java.util.Objects
  * @since 1.1
  */
 
-class Siege(name: String) extends AbstractUnitCard(name) with Equals {
+class Siege(name: String, description: String = "", power: Int = 0)
+  extends AbstractUnitCard(name, description, power) with Equals {
 
-  override def play(player: Player): Unit = {
-    player.receiveSiegeCard(this)
+  override def played(player: Player, board: Board): Unit = {
+    player.battleground.addSiegeCard(this)
   }
   override def canEqual(that: Any): Boolean = that.isInstanceOf[Siege]
 
   override def equals(that: Any): Boolean = {
     if (canEqual(that)) {
       val other = that.asInstanceOf[Siege]
-      name == other.name
+      super.name == other.name
     } else {
       false
     }

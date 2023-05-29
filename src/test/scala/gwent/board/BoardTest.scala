@@ -31,7 +31,8 @@ class BoardTest extends FunSuite{
     board = new Board(player1, player2)
   }
 
-  test("Board with the same two players is the same"){
-    assertEquals(new Board(player1, player2), board)
+  test("Board needs two players"){
+    assertEquals(board.player, player1)
+    assertEquals(board.cpu, player2)
   }
 }

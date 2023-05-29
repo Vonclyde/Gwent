@@ -1,14 +1,19 @@
 package cl.uchile.dcc
+package gwent.board
 
-import gwent.card.unit.{Melee, Ranged, Siege}
-import cl.uchile.dcc.gwent.player.Player
+import gwent.card.{Melee, Ranged, Siege}
+import gwent.player.Player
 
 
-class Battleground(){
+class Battleground {
 
-  protected var meleeZone: List[Melee] = List()
-  protected var rangedZone: List[Ranged] = List()
-  protected var siegeZone: List[Siege] = List()
+  private var meleeZone: List[Melee] = List()
+  private var rangedZone: List[Ranged] = List()
+  private var siegeZone: List[Siege] = List()
+  
+  def meleeCards: List[Melee] = meleeZone
+  def rangedCards: List[Ranged] = rangedZone
+  def siegeCards: List[Siege] = siegeZone
 
   def addMeleeCard(melee: Melee): Unit = {
    meleeZone = meleeZone :+ melee

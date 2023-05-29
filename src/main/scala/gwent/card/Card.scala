@@ -1,37 +1,24 @@
 package cl.uchile.dcc
 package gwent.card
 
-import cl.uchile.dcc.gwent.player.Player
+import gwent.player.Player
 
-import java.util.Objects
+import cl.uchile.dcc.gwent.board.Board
 
-/** A generic card.
+/** A trait that represent a Card
  *
- * @constructor Create a simple card with a name.
- * @param name Name of the card.
- *
- * @author Cristian Salas.
- * @since 1.0.0
- * @version 1.0.0
+ * @constructor Create a new Card with the given name and description
+ * @author Cristian Salas
+ * @since 1.0
+ * @version 1.1
  */
-class Card(val name: String) extends Equals {
-  
-  def play(player: Player): Unit = {
-    println("Nothing yet")
-  }
-  
-  override def canEqual(that: Any): Boolean = that.isInstanceOf[Card]
-  
-  override def equals(that: Any): Boolean = {
-    if (canEqual(that)) {
-      val other = that.asInstanceOf[Card]
-      name == other.name
-    } else {
-      false
-    }
-  }
 
-  override def hashCode: Int = {
-    Objects.hash(classOf[Card], name)
-  }
+trait Card {
+  
+  def name: String
+
+  def description: String
+
+  def played(player: Player, board: Board): Unit
+
 }

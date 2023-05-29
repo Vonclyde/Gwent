@@ -14,5 +14,5 @@ import gwent.card.Card
 
 class Deck(var cards: List[Card]){
   /** Number of cards in deck. */
-  var size: Int = cards.length
+  def size: Int = cards.length
 }

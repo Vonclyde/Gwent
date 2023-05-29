@@ -1,9 +1,10 @@
 package cl.uchile.dcc
-package gwent.card.unit
+package gwent.card
 
-import gwent.card.unit.AbstractUnitCard
+import gwent.card.AbstractUnitCard
+import gwent.player.Player
 
-import cl.uchile.dcc.gwent.player.Player
+import cl.uchile.dcc.gwent.board.Board
 
 import java.util.Objects
 
@@ -15,17 +16,18 @@ import java.util.Objects
  * @since 1.1
  */
 
-class Ranged(name: String) extends AbstractUnitCard(name) with Equals {
+class Ranged(name: String, description: String = "", power: Int = 0)
+  extends AbstractUnitCard(name, description, power) with Equals {
 
-  override def play(player: Player): Unit = {
-    player.receiveRangedCard(this)
+  override def played(player: Player, board: Board): Unit = {
+    player.battleground.addRangedCard(this)
   }
   override def canEqual(that: Any): Boolean = that.isInstanceOf[Ranged]
 
   override def equals(that: Any): Boolean = {
     if (canEqual(that)) {
       val other = that.asInstanceOf[Ranged]
-      name == other.name
+      super.name == other.name
     } else {
       false
     }

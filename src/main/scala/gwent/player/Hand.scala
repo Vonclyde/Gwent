@@ -14,5 +14,9 @@ import gwent.card.Card
 
 class Hand(var cards: List[Card]){
   /** Number of cards in deck. */
-  var size: Int = cards.length
+  def size: Int = cards.length
+  
+  def discardHand(): Unit = {
+    cards = List()
+  }
 }
