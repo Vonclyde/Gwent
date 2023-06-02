@@ -10,23 +10,26 @@ import gwent.board.{Battleground, Board}
  * gonna play his cards. Gems represent his "health" in the match. He also has a
  * starting deck and hand.
  *
- * @param name Name of the player.
- * @param battleground Place where the player will play his cards.
- * @param gems Health of the player.
- * @param deck His deck of cards.
- * @param hand His hand of cards.
- 
+ * @param _name Name of the player.
+ * @param _battleground Place where the player will play his cards.
+ * @param _gems Health of the player.
+ * @param _deck His deck of cards.
+ * @param _hand His hand of cards.
+
  * @see Deck
  * @see Hand
  * @see Card
- *      
+ *
  * @author Cristian Salas
  * @since 1.0.0
  * @version 1.2.0
  */
 class Player(private val _name: String, private val _battleground: Battleground, private var _gems: Int, private var _deck: Deck, private var _hand: Hand) extends Equals {
-
+  /**
+   * Getters for the player attributes.
+   */
   def name: String = _name
+  def battleground: Battleground = _battleground
   def gems: Int = _gems
   def deck: Deck = _deck
   def hand: Hand = _hand
@@ -72,7 +75,6 @@ class Player(private val _name: String, private val _battleground: Battleground,
    * @param board Where the game is taking place.
    *
    */
-
   def play(num: Int, board: Board): Unit = {
     // If there is no cards in hand to be player, it prints "Tu mano está vacía!".
     if (hand.size == 0){

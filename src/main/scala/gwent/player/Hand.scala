@@ -3,7 +3,7 @@ package gwent.player
 
 import gwent.card.Card
 
-@/** A List of cards that represent the playable cards.
+/** A List of cards that represent the playable cards.
  *
  * @param cards Playable cards.
  *
