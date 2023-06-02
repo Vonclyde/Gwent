@@ -11,19 +11,15 @@ import gwent.board.{Battleground, Board}
  * starting deck and hand.
  *
  * @param name Name of the player.
- * @param battleground Side of the battlefield.
+ * @param battleground Place where the player will play his cards.
  * @param gems Health of the player.
  * @param deck His deck of cards.
  * @param hand His hand of cards.
- * @constructor Creates a new player that will be in a gwent match
- * @example
- * {{{
- * val player1 = new Player("Zack", true, 2, new Deck, new Hand)
- * val player2 = new Player("Cody", false, 2, new Deck, new Hand)
- * }}}
+ 
  * @see Deck
  * @see Hand
  * @see Card
+ *      
  * @author Cristian Salas
  * @since 1.0.0
  * @version 1.2.0
@@ -31,7 +27,6 @@ import gwent.board.{Battleground, Board}
 class Player(private val _name: String, private val _battleground: Battleground, private var _gems: Int, private var _deck: Deck, private var _hand: Hand) extends Equals {
 
   def name: String = _name
-  def battleground: Battleground = _battleground
   def gems: Int = _gems
   def deck: Deck = _deck
   def hand: Hand = _hand
@@ -46,9 +41,7 @@ class Player(private val _name: String, private val _battleground: Battleground,
     }
   }
 
-  /** Draw a card from the deck and add it in the hand.
-   *
-   * Function to draw a card from the respective deck of the player.
+  /** Draw a card from the deck and add it to the hand.
    * It adds the top card of the deck to the player's hand.
    */
   def draw(): Unit = {

@@ -5,9 +5,12 @@ import gwent.board.Board
 import gwent.player.Player
 
 
-/** An abstract class that represent a UnitCard with a name
+/** An abstract class that represent a UnitCard with no type.
  *
- * @constructor Create a new Unit Card with the given name
+ * @param _name Name of the card.
+ * @param _description Possible effect of the card.
+ * @param _power Streght of the card.
+ *
  * @author Cristian Salas
  * @version 1.0
  * @since 1.1
@@ -15,6 +18,9 @@ import gwent.player.Player
 abstract class AbstractUnitCard (private val _name: String, private val _description: String, private var _power: Int)
   extends Card {
 
+  /**
+   * Getters for the attributes of a unit card.
+   */
   def name: String = _name
 
   def description: String = _description

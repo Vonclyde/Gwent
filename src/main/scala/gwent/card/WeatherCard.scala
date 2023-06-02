@@ -8,9 +8,10 @@ import java.util.Objects
 
 /** A weather card, it extends Card.
  *
- * @constructor Create a weather card with a given name.
- * @param name Name of the weather card.
- * @param description Description of what does the weather provided by the card.
+ * @param _name Name of the weather card.
+ * @param _description Description of what does the weather provided by the card.
+ * @constructor It creates a weather card with a given name.
+ *
  * @author Cristian Salas
  * @since 1.0.0
  * @version 1.0.0
@@ -20,7 +21,11 @@ class WeatherCard(private val _name: String, private val _description: String) e
   def name: String = _name
   def description: String = _description
   
-  /** Same methods of Card */
+  /**
+   * When a weather card is played, it changes the current weather of the board.
+   * @param player It receives the player who play the card, in this particular function of WeatherCard is not used.
+   * @param board Receives the board in which the weather is gonna be changed 
+   */
   override def played(player: Player, board: Board): Unit = {
     board.changeWeather(this)
   }

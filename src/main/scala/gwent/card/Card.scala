@@ -14,11 +14,19 @@ import cl.uchile.dcc.gwent.board.Board
  */
 
 trait Card {
-  
-  def name: String
 
+  /**
+   * Getters to obtain the name of the card and description
+   */
+  def name: String
   def description: String
 
+  /**
+   * Function for when a card is played, its different according to the type of card
+   *
+   * @param player Player who plays the card.
+   * @param board Board in which the match is taking place.
+   */
   def played(player: Player, board: Board): Unit
 
 }
