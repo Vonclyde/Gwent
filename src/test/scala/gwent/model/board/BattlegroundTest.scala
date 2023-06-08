@@ -2,7 +2,6 @@ package cl.uchile.dcc
 package gwent.board
 
 import cl.uchile.dcc.gwent.card.{Melee, Ranged, Siege, WeatherCard}
-import cl.uchile.dcc.gwent.player.{Deck, Hand, Player}
 import munit.FunSuite
 
 class BattlegroundTest extends FunSuite {

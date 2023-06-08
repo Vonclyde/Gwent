@@ -2,7 +2,6 @@ package cl.uchile.dcc
 package gwent.board
 
 import cl.uchile.dcc.gwent.card.WeatherCard
-import cl.uchile.dcc.gwent.player.Player
 
 /** Class that the represent the board in a gwent match.
  * A gwent match requires 2 players, also there is a area for the weather that affects the cards in the player's battleground.

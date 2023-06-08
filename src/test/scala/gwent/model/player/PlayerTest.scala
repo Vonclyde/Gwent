@@ -1,9 +1,10 @@
 package cl.uchile.dcc
-package gwent.player
+package gwent.model.player
 
 import gwent.board.Battleground
 import gwent.card.{Melee, Ranged}
 
+import cl.uchile.dcc.gwent.player.{Deck, Hand, Player}
 import munit.FunSuite
 
 class PlayerTest extends FunSuite {

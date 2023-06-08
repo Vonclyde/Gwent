@@ -2,7 +2,6 @@ package cl.uchile.dcc
 package gwent.card
 
 import cl.uchile.dcc.gwent.board.Board
-import cl.uchile.dcc.gwent.player.Player
 
 import java.util.Objects
 

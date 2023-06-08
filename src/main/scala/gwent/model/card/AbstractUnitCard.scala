@@ -2,7 +2,6 @@ package cl.uchile.dcc
 package gwent.card
 
 import gwent.board.Board
-import gwent.player.Player
 
 
 /** An abstract class that represent a UnitCard with no type.

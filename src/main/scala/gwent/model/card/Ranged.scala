@@ -2,7 +2,6 @@ package cl.uchile.dcc
 package gwent.card
 
 import gwent.card.AbstractUnitCard
-import gwent.player.Player
 
 import cl.uchile.dcc.gwent.board.Board
 

@@ -1,8 +1,6 @@
 package cl.uchile.dcc
 package gwent.card
 
-import gwent.player.Player
-
 import cl.uchile.dcc.gwent.board.Board
 
 /** A trait that represent a Card

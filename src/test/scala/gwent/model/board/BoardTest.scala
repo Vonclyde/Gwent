@@ -2,7 +2,6 @@ package cl.uchile.dcc
 package gwent.board
 
 import cl.uchile.dcc.gwent.card.WeatherCard
-import cl.uchile.dcc.gwent.player.{Hand, Deck, Player}
 import munit.FunSuite
 
 class BoardTest extends FunSuite{

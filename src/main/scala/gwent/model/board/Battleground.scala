@@ -2,7 +2,6 @@ package cl.uchile.dcc
 package gwent.board
 
 import gwent.card.{Melee, Ranged, Siege}
-import gwent.player.Player
 
 /** Class that represents the player's area where his unit cards goes when played according to his type
  *
