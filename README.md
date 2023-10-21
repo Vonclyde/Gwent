@@ -1,5 +1,7 @@
 # Gwen't
 
+Hecho para el ramo Metodologías de Diseño y Programación.
+
 ![http://creativecommons.org/licenses/by/4.0/](https://i.creativecommons.org/l/by/4.0/88x31.png)
 
 This work is licensed under a
@@ -12,6 +14,3 @@ This project's goal is to create a (simplified) clone of the
 [_Gwent_](https://www.playgwent.com/en)card game developed by [_CD PROJEKT RED_](https://cdprojektred.com/en/)
 
 ---
-
-# Juego de Gwen't
-Hecho para el ramo Metodologías de Diseño y Programación.
