@@ -13,4 +13,5 @@ This project's goal is to create a (simplified) clone of the
 
 ---
 
-**The rest of the documentation is left for the users of this template to complete**
+# Juego de Gwen't
+Hecho para el ramo Metodologías de Diseño y Programación.
